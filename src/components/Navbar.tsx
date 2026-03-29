@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import profileImg from "@/assets/profile.jpg";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
   { label: "Skills", href: "#skills" },
+  { label: "Journey", href: "#journey" },
   { label: "Magazines", href: "#magazines" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
@@ -29,18 +31,21 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-        <a href="#" className="font-heading text-xl font-bold text-primary">
-          HP<span className="text-gold">.</span>
+      <div className="container mx-auto flex items-center justify-between py-3 px-4 lg:px-8">
+        <a href="#" className="flex items-center gap-2">
+          <img src={profileImg} alt="Harshad" className="w-8 h-8 rounded-full object-cover object-top border border-primary/20" />
+          <span className="font-heading text-lg font-bold text-primary hidden sm:inline">
+            Harshad<span className="text-gold">.</span>
+          </span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>
@@ -67,13 +72,13 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border animate-fade-in">
-          <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+          <div className="container mx-auto px-4 py-6 flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                className="text-base font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
               >
                 {link.label}
               </a>
