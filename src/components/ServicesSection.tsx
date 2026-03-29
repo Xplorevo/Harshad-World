@@ -1,4 +1,4 @@
-import { GraduationCap, Rocket, Handshake, Calendar, Mail, Users } from "lucide-react";
+import { GraduationCap, Rocket, Handshake, Linkedin, Mail, Users } from "lucide-react";
 
 const services = [
   {
@@ -6,8 +6,8 @@ const services = [
     title: "For Students",
     items: ["Career guidance", "Startup direction", "Choosing the right path"],
     cta: "Book Appointment",
-    ctaIcon: Calendar,
-    href: "https://topmate.io",
+    ctaIcon: Linkedin,
+    href: "https://www.linkedin.com/in/harshad-pakhale-221hp/",
   },
   {
     icon: Rocket,
@@ -42,9 +42,9 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-card border border-border rounded-2xl p-7 card-hover shadow-[var(--shadow-card)] flex flex-col"
+              className="bg-card border border-border rounded-2xl p-7 card-hover shadow-[var(--shadow-card)] flex flex-col group"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
                 <s.icon size={22} className="text-primary" />
               </div>
               <h3 className="text-lg font-heading font-bold text-foreground mb-4">{s.title}</h3>
@@ -60,7 +60,7 @@ const ServicesSection = () => {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity w-full"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all hover:scale-[1.02] w-full"
               >
                 <s.ctaIcon size={16} /> {s.cta}
               </a>
