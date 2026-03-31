@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import VoiceIntro from "@/components/VoiceIntro";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -15,13 +16,15 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [introComplete, setIntroComplete] = useState(false);
   const [loading, setLoading] = useState(true);
-  const handleComplete = useCallback(() => setLoading(false), []);
+  const handleLoaderComplete = useCallback(() => setLoading(false), []);
 
   return (
     <>
-      {loading && <Loader onComplete={handleComplete} />}
-      <div className={`min-h-screen bg-background ${loading ? "overflow-hidden h-screen" : ""}`}>
+      {!introComplete && <VoiceIntro onComplete={() => setIntroComplete(true)} />}
+      {introComplete && loading && <Loader onComplete={handleLoaderComplete} />}
+      <div className={`min-h-screen bg-background ${!introComplete || loading ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <HeroSection />
         <AboutSection />
