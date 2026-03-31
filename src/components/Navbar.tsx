@@ -35,7 +35,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-2">
           <img src={profileImg} alt="Harshad" className="w-8 h-8 rounded-full object-cover object-top border border-primary/20" />
           <span className="font-heading text-lg font-bold text-primary hidden sm:inline">
-            Harshad<span className="text-gold">.</span>
+            Mr. Harshad<span className="text-gold">.</span>
           </span>
         </a>
 
