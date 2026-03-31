@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
-import VoiceIntro from "@/components/VoiceIntro";
-import Loader from "@/components/Loader";
+import { AudioProvider } from "@/components/AudioProvider";
+import CinematicIntro from "@/components/CinematicIntro";
+import MuteToggle from "@/components/MuteToggle";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -17,14 +18,13 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const handleLoaderComplete = useCallback(() => setLoading(false), []);
+  const handleIntroComplete = useCallback(() => setIntroComplete(true), []);
 
   return (
-    <>
-      {!introComplete && <VoiceIntro onComplete={() => setIntroComplete(true)} />}
-      {introComplete && loading && <Loader onComplete={handleLoaderComplete} />}
-      <div className={`min-h-screen bg-background ${!introComplete || loading ? "overflow-hidden h-screen" : ""}`}>
+    <AudioProvider>
+      {!introComplete && <CinematicIntro onComplete={handleIntroComplete} />}
+      {introComplete && <MuteToggle />}
+      <div className={`min-h-screen bg-background ${!introComplete ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <HeroSection />
         <AboutSection />
@@ -39,7 +39,7 @@ const Index = () => {
         <Footer />
         <FloatingWhatsApp />
       </div>
-    </>
+    </AudioProvider>
   );
 };
 
