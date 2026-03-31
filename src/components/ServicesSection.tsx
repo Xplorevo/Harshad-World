@@ -23,7 +23,7 @@ const services = [
     items: ["Partnerships", "Community building", "Speaking & mentorship"],
     cta: "Connect",
     ctaIcon: Handshake,
-    href: "https://www.linkedin.com/in/harshad-pakhale-221hp/",
+    href: "https://wa.me/919067572205",
   },
 ];
 
