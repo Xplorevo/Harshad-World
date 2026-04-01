@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import iitbImg from "@/assets/profile-iitb.jpg";
 import necImg from "@/assets/nec-finals.jpg";
 import xplorevoTripImg from "@/assets/xplorevo-trip.jpg";
@@ -18,17 +19,15 @@ const images = [
 
 const JourneyGlimpses = () => {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const { ref, isVisible } = useScrollReveal();
 
   return (
     <section id="journey" className="py-24 bg-surface">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-3">Journey</p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-            Glimpses of My Journey
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Glimpses of My Journey</h2>
         </div>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto auto-rows-[180px] md:auto-rows-[220px]">
           {images.map((img, i) => (
             <div
@@ -36,11 +35,7 @@ const JourneyGlimpses = () => {
               className={`${img.span} relative rounded-2xl overflow-hidden cursor-pointer group shadow-[var(--shadow-card)]`}
               onClick={() => setLightbox(i)}
             >
-              <img
-                src={img.src}
-                alt={img.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+              <img src={img.src} alt={img.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <div>
                   <p className="text-primary-foreground text-sm font-bold">{img.title}</p>
@@ -52,16 +47,9 @@ const JourneyGlimpses = () => {
         </div>
       </div>
 
-      {/* Lightbox */}
       {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-[100] bg-foreground/90 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            onClick={() => setLightbox(null)}
-          >
+        <div className="fixed inset-0 z-[100] bg-foreground/90 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in" onClick={() => setLightbox(null)}>
+          <button className="absolute top-6 right-6 text-primary-foreground/80 hover:text-primary-foreground transition-colors" onClick={() => setLightbox(null)}>
             <X size={32} />
           </button>
           <img
