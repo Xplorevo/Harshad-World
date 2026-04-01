@@ -3,7 +3,7 @@ import ecellLogo from "@/assets/ecell-logo.png";
 import xtnLogo from "@/assets/xtn-logo.png";
 
 const Footer = () => (
-  <footer className="bg-foreground py-10">
+  <footer className="bg-foreground dark:bg-card py-10">
     <div className="container mx-auto px-4">
       <div className="flex flex-col items-center gap-6">
         {/* Logos */}
