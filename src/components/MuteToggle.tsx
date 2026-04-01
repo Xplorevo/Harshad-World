@@ -7,7 +7,7 @@ const MuteToggle = () => {
   return (
     <button
       onClick={toggleMute}
-      className="fixed top-4 right-4 z-[9998] w-10 h-10 rounded-full bg-card/80 backdrop-blur-lg border border-border shadow-lg flex items-center justify-center hover:scale-110 transition-all"
+      className="fixed top-4 right-14 lg:right-4 z-[9998] w-10 h-10 rounded-full bg-card/80 backdrop-blur-lg border border-border shadow-lg flex items-center justify-center hover:scale-110 transition-all"
       aria-label={isMuted ? "Unmute" : "Mute"}
     >
       {isMuted ? (

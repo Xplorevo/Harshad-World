@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Award, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certs = [
   { id: "1KKuxytFapbIsjOJK5LoxlfrCIw6oRQd2" },
@@ -28,91 +29,46 @@ const certs = [
   { id: "1EOsZeWoogeUr8U9v2kS4MiU_tCRPmDJg" },
 ];
 
-const getThumb = (id: string) =>
-  `https://drive.google.com/thumbnail?id=${id}&sz=w600`;
-
-const getFullImg = (id: string) =>
-  `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
+const getThumb = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w600`;
+const getFullImg = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
 
 const CertificationsSection = () => {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const { ref, isVisible } = useScrollReveal();
 
-  const openLightbox = (i: number) => setLightbox(i);
   const closeLightbox = () => setLightbox(null);
   const prev = () => setLightbox((v) => (v !== null ? (v - 1 + certs.length) % certs.length : null));
   const next = () => setLightbox((v) => (v !== null ? (v + 1) % certs.length : null));
 
   return (
     <section id="certifications" className="py-24 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-3">
             <Award size={18} className="text-primary" />
-            <p className="text-sm font-semibold text-primary tracking-widest uppercase">
-              Certifications
-            </p>
+            <p className="text-sm font-semibold text-primary tracking-widest uppercase">Certifications</p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-            Certifications & Continuous Learning
-          </h2>
-          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-            Validated skills. Proven commitment to growth.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">Certifications & Continuous Learning</h2>
+          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Validated skills. Proven commitment to growth.</p>
         </div>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {certs.map((cert, i) => (
-            <div
-              key={cert.id}
-              onClick={() => openLightbox(i)}
-              className="group cursor-pointer rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300"
-            >
+            <div key={cert.id} onClick={() => setLightbox(i)} className="group cursor-pointer rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={getThumb(cert.id)}
-                  alt={`Certificate ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <img src={getThumb(cert.id)} alt={`Certificate ${i + 1}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Lightbox */}
       {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={closeLightbox}
-        >
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white/80 hover:text-white z-10"
-          >
-            <X size={28} />
-          </button>
-          <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 text-white/80 hover:text-white z-10"
-          >
-            <ChevronLeft size={36} />
-          </button>
-          <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-4 text-white/80 hover:text-white z-10"
-          >
-            <ChevronRight size={36} />
-          </button>
-          <img
-            src={getFullImg(certs[lightbox].id)}
-            alt={`Certificate ${lightbox + 1}`}
-            className="max-w-full max-h-[85vh] rounded-lg object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <p className="absolute bottom-4 text-white/60 text-sm">
-            {lightbox + 1} / {certs.length}
-          </p>
+        <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 animate-fade-in" onClick={closeLightbox}>
+          <button onClick={closeLightbox} className="absolute top-4 right-4 text-white/80 hover:text-white z-10"><X size={28} /></button>
+          <button onClick={(e) => { e.stopPropagation(); prev(); }} className="absolute left-4 text-white/80 hover:text-white z-10"><ChevronLeft size={36} /></button>
+          <button onClick={(e) => { e.stopPropagation(); next(); }} className="absolute right-4 text-white/80 hover:text-white z-10"><ChevronRight size={36} /></button>
+          <img src={getFullImg(certs[lightbox].id)} alt={`Certificate ${lightbox + 1}`} className="max-w-full max-h-[85vh] rounded-lg object-contain" onClick={(e) => e.stopPropagation()} />
+          <p className="absolute bottom-4 text-white/60 text-sm">{lightbox + 1} / {certs.length}</p>
         </div>
       )}
     </section>

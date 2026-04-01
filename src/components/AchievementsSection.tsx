@@ -1,4 +1,5 @@
 import { Trophy, Medal, Rocket, Users, Award } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const achievements = [
   { icon: Trophy, title: "NEC IIT Bombay Finalist", desc: "Top 10 in India — National Entrepreneurship Challenge" },
@@ -10,22 +11,18 @@ const achievements = [
 ];
 
 const AchievementsSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section id="achievements" className="py-24 gradient-navy">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-gold tracking-widest uppercase mb-3">Achievements</p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
-            Milestones & Recognition
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">Milestones & Recognition</h2>
         </div>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {achievements.map((item, i) => (
-            <div
-              key={i}
-              className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-xl p-6 card-hover group"
-            >
+            <div key={i} className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-xl p-6 card-hover group">
               <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center mb-4 group-hover:bg-gold/30 transition-colors">
                 <item.icon size={20} className="text-gold" />
               </div>
