@@ -24,7 +24,12 @@ const Index = () => {
   return (
     <AudioProvider>
       {!introComplete && <CinematicIntro onComplete={handleIntroComplete} />}
-      {introComplete && <MuteToggle />}
+      {introComplete && (
+        <>
+          <MuteToggle />
+          <DarkModeToggle />
+        </>
+      )}
       <div className={`min-h-screen bg-background ${!introComplete ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <HeroSection />
