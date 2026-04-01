@@ -18,7 +18,7 @@ const Footer = () => (
             <img src={xplorevoLogo} alt="Xplorevo" className="h-10 rounded-lg object-contain" />
           </a>
         </div>
-        <p className="text-sm text-primary-foreground/60 text-center">
+        <p className="text-sm text-primary-foreground/60 dark:text-muted-foreground text-center">
           © {new Date().getFullYear()} Mr. Harshad Harishchandra Pakhale. Built with passion & purpose.
         </p>
       </div>

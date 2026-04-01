@@ -16,7 +16,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen gradient-hero flex items-center overflow-hidden">
+    <section className="relative min-h-screen gradient-hero dark:bg-background flex items-center overflow-hidden">
       {/* Animated grid */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: "radial-gradient(hsl(var(--navy)) 1px, transparent 1px)",
