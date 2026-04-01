@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { AudioProvider } from "@/components/AudioProvider";
 import CinematicIntro from "@/components/CinematicIntro";
 import MuteToggle from "@/components/MuteToggle";
+import DarkModeToggle from "@/components/DarkModeToggle";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -23,7 +24,12 @@ const Index = () => {
   return (
     <AudioProvider>
       {!introComplete && <CinematicIntro onComplete={handleIntroComplete} />}
-      {introComplete && <MuteToggle />}
+      {introComplete && (
+        <>
+          <MuteToggle />
+          <DarkModeToggle />
+        </>
+      )}
       <div className={`min-h-screen bg-background ${!introComplete ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <HeroSection />
