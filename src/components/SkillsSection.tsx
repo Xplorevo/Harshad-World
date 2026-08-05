@@ -1,44 +1,89 @@
-import { Code, TrendingUp, Palette, Users } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { motion } from "framer-motion";
+import SectionHeading from "@/components/shared/SectionHeading";
 
-const skillCategories = [
-  { icon: Code, title: "Technical", skills: ["Full Stack Development", "Web Development", "AI Enthusiast", "Product Development"] },
-  { icon: TrendingUp, title: "Business", skills: ["Startup Strategy", "Business Analysis", "Growth & Scaling", "Networking"] },
-  { icon: Palette, title: "Creative", skills: ["Graphic Design", "Branding", "Social Media Strategy"] },
-  { icon: Users, title: "Leadership", skills: ["Team Management", "Event Management", "Mentoring", "Public Speaking"] },
+const groups = [
+  {
+    title: "Leadership & Business",
+    skills: [
+      { name: "Leadership", level: 95 },
+      { name: "Startup Building", level: 93 },
+      { name: "Business Strategy", level: 90 },
+      { name: "Product Strategy", level: 88 },
+      { name: "Business Analysis", level: 85 },
+    ],
+  },
+  {
+    title: "Technology & AI",
+    skills: [
+      { name: "Full Stack Development", level: 88 },
+      { name: "Artificial Intelligence", level: 87 },
+      { name: "Cloud", level: 78 },
+      { name: "DevOps", level: 72 },
+    ],
+  },
+  {
+    title: "Design & Creative",
+    skills: [
+      { name: "UI / UX", level: 86 },
+      { name: "Graphic Design", level: 90 },
+      { name: "Content Creation", level: 88 },
+      { name: "Marketing", level: 84 },
+    ],
+  },
+  {
+    title: "People & Community",
+    skills: [
+      { name: "Public Speaking", level: 90 },
+      { name: "Networking", level: 94 },
+      { name: "Community Building", level: 95 },
+    ],
+  },
 ];
 
-const SkillsSection = () => {
-  const { ref, isVisible } = useScrollReveal();
+const SkillsSection = () => (
+  <section id="skills" className="relative py-24 bg-surface overflow-hidden">
+    <div className="absolute inset-0 aurora opacity-50" aria-hidden="true" />
+    <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <SectionHeading
+        eyebrow="Skills"
+        title={<>What I bring to <span className="text-gradient-brand">the table</span></>}
+      />
 
-  return (
-    <section id="skills" className="py-24 bg-surface">
-      <div ref={ref} className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-3">Skills</p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">What I Bring to the Table</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {skillCategories.map((cat, i) => (
-            <div key={i} className="bg-card border border-border rounded-xl p-6 card-hover shadow-[var(--shadow-card)]">
-              <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center mb-5">
-                <cat.icon size={20} className="text-primary" />
-              </div>
-              <h3 className="text-base font-heading font-bold text-foreground mb-4">{cat.title}</h3>
-              <ul className="space-y-2">
-                {cat.skills.map((skill) => (
-                  <li key={skill} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 flex-shrink-0" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {groups.map((g, gi) => (
+          <motion.div
+            key={g.title}
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: (gi % 2) * 0.08 }}
+            className="glass gradient-border rounded-2xl p-7"
+          >
+            <h3 className="font-heading font-bold text-foreground text-lg mb-6">{g.title}</h3>
+            <div className="space-y-4">
+              {g.skills.map((s, i) => (
+                <div key={s.name}>
+                  <div className="flex justify-between text-sm mb-1.5">
+                    <span className="text-foreground font-medium">{s.name}</span>
+                    <span className="text-muted-foreground tabular-nums">{s.level}%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-muted overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${s.level}%` }}
+                      viewport={{ once: true, amount: 0.6 }}
+                      transition={{ duration: 1, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                      className="h-full rounded-full bg-gradient-to-r from-electric via-cyan to-violet"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default SkillsSection;
