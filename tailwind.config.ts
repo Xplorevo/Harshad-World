@@ -57,6 +57,9 @@ export default {
           dark: "hsl(var(--navy-dark))",
         },
         gold: "hsl(var(--gold))",
+        electric: "hsl(var(--electric))",
+        cyan: "hsl(var(--cyan))",
+        violet: "hsl(var(--violet))",
         surface: {
           DEFAULT: "hsl(var(--surface))",
           elevated: "hsl(var(--surface-elevated))",

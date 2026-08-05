@@ -1,121 +1,250 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowDown,
+  CalendarCheck,
+  Download,
+  ExternalLink,
+  Github,
+  Handshake,
+  Instagram,
+  Linkedin,
+  Mail,
+  MessageCircle,
+  Palette,
+  Sparkles,
+} from "lucide-react";
 import profileImg from "@/assets/profile2.jpg";
 import profileImg2 from "@/assets/profile-iitb.jpg";
-import { Calendar, Handshake, Linkedin, MessageCircle } from "lucide-react";
+import ParticleField from "@/components/shared/ParticleField";
+import Typewriter from "@/components/shared/Typewriter";
+import { links, mailto } from "@/config/links";
 
 const images = [profileImg, profileImg2];
 
+const rotating = [
+  "Founder",
+  "CEO",
+  "AI Builder",
+  "Startup Mentor",
+  "Community Builder",
+  "Tech Speaker",
+  "Business Strategist",
+  "Innovation Leader",
+];
+
+const socials = [
+  { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
+  { icon: Instagram, label: "Instagram", href: links.instagram },
+  { icon: Github, label: "GitHub", href: links.github },
+  { icon: Sparkles, label: "X (Twitter)", href: links.x },
+  { icon: Mail, label: "Email", href: mailto },
+  { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
+  { icon: CalendarCheck, label: "Topmate", href: links.topmate },
+];
+
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+    const interval = setInterval(() => setCurrent((p) => (p + 1) % images.length), 4500);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const onMove = (e: PointerEvent) => {
+      setParallax({
+        x: (e.clientX / window.innerWidth - 0.5) * 24,
+        y: (e.clientY / window.innerHeight - 0.5) * 24,
+      });
+    };
+    window.addEventListener("pointermove", onMove);
+    return () => window.removeEventListener("pointermove", onMove);
+  }, []);
+
   return (
-    <section className="relative min-h-screen gradient-hero flex items-center overflow-hidden">
-      {/* Animated grid */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(hsl(var(--navy)) 1px, transparent 1px)",
-        backgroundSize: "24px 24px"
-      }} />
+    <section
+      id="home"
+      className="relative min-h-dvh gradient-hero flex items-center overflow-hidden noise"
+    >
+      <div className="absolute inset-0 aurora" aria-hidden="true" />
+      <div className="absolute inset-0 grid-lines" aria-hidden="true" />
+      <ParticleField />
 
-      {/* Floating orbs */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+      {/* Morphing blobs */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 right-[8%] w-[26rem] h-[26rem] bg-electric/15 blur-3xl animate-blob"
+        style={{ transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)` }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-6rem] left-[4%] w-[30rem] h-[30rem] bg-violet/15 blur-3xl animate-blob"
+        style={{ animationDelay: "3s", transform: `translate3d(${-parallax.x}px, ${-parallax.y}px, 0)` }}
+      />
 
-      <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text */}
-          <div className="order-2 lg:order-1 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-1.5 text-xs font-semibold text-primary tracking-wide animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Open to Collaborations
-            </div>
+      <div className="container mx-auto px-4 lg:px-8 pt-28 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1 space-y-7">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold text-foreground/80 tracking-wide"
+            >
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-green-500 animate-ping-slow" />
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-green-500" />
+              </span>
+              Founder &amp; CEO · Xplorevo Pvt Ltd · Open to Collaborations
+            </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.1] text-foreground animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Mr. Harshad<br />
-              <span className="gradient-text-navy">Harishchandra</span><br />
-              <span className="gradient-text-navy">Pakhale</span>
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-heading font-bold leading-[1.03] tracking-tight text-foreground"
+            >
+              Harshad<br />
+              Harishchandra<br />
+              <span className="text-gradient-brand">Pakhale</span>
+            </motion.h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              AI Enthusiast & Full Stack Developer · Founder · Entrepreneur · Ecosystem Builder · Graphics Designer · Business Analyst
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-base md:text-lg text-muted-foreground font-medium"
+            >
+              Founder • Entrepreneur • AI Builder • Full Stack Developer
+            </motion.p>
 
-            <p className="text-sm text-muted-foreground max-w-md animate-fade-up" style={{ animationDelay: "0.25s" }}>
-              Building innovative solutions at the intersection of technology and entrepreneurship.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.22 }}
+              className="text-xl md:text-3xl font-heading font-bold text-foreground min-h-[2.5rem]"
+            >
+              <Typewriter words={rotating} className="text-gradient-brand" />
+            </motion.p>
 
-            <div className="flex flex-wrap gap-3 pt-2 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap gap-3 pt-1"
+            >
               <a
-                href="https://www.linkedin.com/in/harshad-pakhale-221hp/"
+                href={links.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 sm:px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all hover:scale-105"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold hover:scale-[1.04] hover:shadow-[var(--shadow-glow)] transition-all"
               >
-                <Calendar size={16} /> Book Appointment
+                <CalendarCheck size={16} /> Book a Meeting
               </a>
               <a
-                href="mailto:ceo@xplorevo.tech"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-4 sm:px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/5 transition-all hover:scale-105"
+                href={mailto}
+                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
               >
-                <Handshake size={16} /> Collaborate
+                <Handshake size={16} /> Let's Collaborate
               </a>
               <a
-                href="https://www.linkedin.com/in/harshad-pakhale-221hp/"
+                href={links.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-4 sm:px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary/5 transition-all hover:scale-105"
+                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
               >
-                <Linkedin size={16} /> Connect
+                <Download size={16} /> Download Resume
               </a>
               <a
-                href="https://wa.me/919067572205"
+                href="#journey"
+                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
+              >
+                <ArrowDown size={16} /> Explore My Journey
+              </a>
+              <a
+                href={links.designPortfolio}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-600 text-primary-foreground px-4 sm:px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-all hover:scale-105"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-electric to-violet text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold hover:scale-[1.04] transition-all"
               >
-                <MessageCircle size={16} /> WhatsApp
+                <Palette size={16} /> View Design Portfolio <ExternalLink size={13} />
               </a>
-            </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-2.5 pt-2"
+            >
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  title={s.label}
+                  className="w-11 h-11 rounded-xl glass flex items-center justify-center text-foreground/80 hover:text-primary hover:scale-110 hover:-translate-y-0.5 transition-all"
+                >
+                  <s.icon size={18} />
+                </a>
+              ))}
+            </motion.div>
           </div>
 
-          {/* Sliding Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          {/* Portrait */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            style={{ transform: `translate3d(${parallax.x * 0.6}px, ${parallax.y * 0.6}px, 0)` }}
+          >
             <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)] border-4 border-background ring-1 ring-border relative">
-                {images.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt="Harshad Pakhale"
-                    className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-1000 ${
-                      i === current ? "opacity-100 scale-100" : "opacity-0 scale-110"
-                    }`}
-                  />
-                ))}
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[24rem] lg:h-[24rem] rounded-[2rem] overflow-hidden glass-strong p-1.5 relative animate-pulse-glow">
+                <div className="w-full h-full rounded-[1.6rem] overflow-hidden relative">
+                  {images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt="Harshad Harishchandra Pakhale, Founder and CEO of Xplorevo"
+                      className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-1000 ${
+                        i === current ? "opacity-100 scale-100" : "opacity-0 scale-110"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
-              {/* Indicators */}
-              <div className="flex gap-2 justify-center mt-4">
+
+              <div className="flex gap-2 justify-center mt-5">
                 {images.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      i === current ? "bg-primary w-6" : "bg-primary/30"
+                    aria-label={`Show photo ${i + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      i === current ? "bg-primary w-7" : "bg-primary/30 w-2"
                     }`}
                   />
                 ))}
               </div>
-              {/* Decorative */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl gradient-navy opacity-10 -z-10" />
-              <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl border-2 border-primary/20 -z-10 animate-spin-slow" />
+
+              <div className="absolute -bottom-6 -left-6 glass rounded-2xl px-4 py-3 hidden sm:block animate-float">
+                <p className="text-lg font-heading font-bold text-foreground">1000+</p>
+                <p className="text-[11px] text-muted-foreground">Students impacted</p>
+              </div>
+              <div
+                className="absolute -top-6 -right-4 glass rounded-2xl px-4 py-3 hidden sm:block animate-float"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <p className="text-lg font-heading font-bold text-foreground">2</p>
+                <p className="text-[11px] text-muted-foreground">Ventures founded</p>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://harshad-pakhale-dot-dev.lovable.app/sitemap.xml
