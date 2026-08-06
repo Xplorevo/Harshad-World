@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  CalendarCheck,
   Check,
   Copy,
   Github,
@@ -20,7 +19,6 @@ const channels = [
   { icon: Linkedin, label: "LinkedIn", value: "harshad-pakhale-221hp", href: links.linkedin },
   { icon: Instagram, label: "Instagram", value: "harshad.h.pakhale.01", href: links.instagram },
   { icon: Github, label: "GitHub", value: "harshadpakhale", href: links.github },
-  { icon: CalendarCheck, label: "Topmate", value: "Book a 1:1 session", href: links.topmate },
 ];
 
 const ContactSection = () => {
