@@ -2,17 +2,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  CalendarCheck,
-  Download,
   ExternalLink,
-  Github,
   Handshake,
   Instagram,
   Linkedin,
   Mail,
   MessageCircle,
   Palette,
-  Sparkles,
 } from "lucide-react";
 import profileImg from "@/assets/profile2.jpg";
 import profileImg2 from "@/assets/profile-iitb.jpg";
