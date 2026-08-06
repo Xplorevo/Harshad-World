@@ -52,7 +52,7 @@ const achievements = [
 ];
 
 const AchievementsSection = () => (
-  <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise">
+  <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
     <div className="absolute inset-0 aurora" aria-hidden="true" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <SectionHeading
