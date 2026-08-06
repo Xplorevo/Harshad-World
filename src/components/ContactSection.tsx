@@ -65,14 +65,6 @@ const ContactSection = () => {
 
             <div className="flex flex-wrap gap-3 mt-6">
               <a
-                href={links.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-electric to-violet text-primary-foreground px-6 py-3 rounded-xl text-sm font-semibold hover:scale-105 transition-transform"
-              >
-                <CalendarCheck size={17} /> Book a Meeting
-              </a>
-              <a
                 href={links.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
