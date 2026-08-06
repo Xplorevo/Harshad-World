@@ -198,6 +198,17 @@
     box-shadow: var(--shadow-elevated);
   }
 
+  /* Sections with a dark navy background always need light-on-dark tokens,
+     regardless of light/dark theme, so all content stays readable. */
+  .on-dark {
+    --primary-foreground: 0 0% 100%;
+    --cyan: 187 92% 62%;
+    --glass-bg: 226 40% 17% / 0.62;
+    --glass-border: 210 60% 90% / 0.16;
+  }
+
+
+
   .glow-ring {
     box-shadow: var(--shadow-glow);
   }

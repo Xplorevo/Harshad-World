@@ -52,7 +52,7 @@ const achievements = [
 ];
 
 const AchievementsSection = () => (
-  <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise">
+  <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
     <div className="absolute inset-0 aurora" aria-hidden="true" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <SectionHeading
@@ -74,7 +74,7 @@ const AchievementsSection = () => (
             <p className="text-2xl md:text-3xl font-heading font-bold text-gradient-brand">
               <AnimatedCounter value={s.value} suffix={s.suffix} />
             </p>
-            <p className="text-[11px] mt-1 text-primary-foreground/70 leading-tight">{s.label}</p>
+            <p className="text-[11px] mt-1 text-primary-foreground/80 leading-tight">{s.label}</p>
           </motion.div>
         ))}
       </div>
@@ -93,7 +93,7 @@ const AchievementsSection = () => (
               <item.icon size={20} className="text-cyan" />
             </div>
             <h3 className="text-base font-heading font-bold text-primary-foreground mb-2">{item.title}</h3>
-            <p className="text-sm text-primary-foreground/70 leading-relaxed">{item.desc}</p>
+            <p className="text-sm text-primary-foreground/80 leading-relaxed">{item.desc}</p>
           </motion.article>
         ))}
       </div>

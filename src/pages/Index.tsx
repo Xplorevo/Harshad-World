@@ -13,7 +13,6 @@ import ExperienceSection from "@/components/ExperienceSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import AchievementsSection from "@/components/AchievementsSection";
 import SkillsSection from "@/components/SkillsSection";
-import TechStackSection from "@/components/TechStackSection";
 import JourneyGlimpses from "@/components/JourneyGlimpses";
 import CertificationsSection from "@/components/CertificationsSection";
 import MagazinesSection from "@/components/MagazinesSection";
@@ -49,7 +48,6 @@ const Index = () => {
           <FeaturedProjects />
           <AchievementsSection />
           <SkillsSection />
-          <TechStackSection />
           <JourneyGlimpses />
           <CertificationsSection />
           <MagazinesSection />

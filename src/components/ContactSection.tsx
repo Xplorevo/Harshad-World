@@ -33,7 +33,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 gradient-navy overflow-hidden noise">
+    <section id="contact" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
       <div className="absolute inset-0 aurora" aria-hidden="true" />
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <SectionHeading
@@ -58,7 +58,7 @@ const ContactSection = () => {
                     <c.icon size={16} className="text-cyan" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-xs text-primary-foreground/60">{c.label}</span>
+                    <span className="block text-xs text-primary-foreground/75">{c.label}</span>
                     <span className="block text-sm font-medium text-primary-foreground truncate">{c.value}</span>
                   </span>
                 </a>
