@@ -58,7 +58,7 @@ const ContactSection = () => {
                     <c.icon size={16} className="text-cyan" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-xs text-primary-foreground/60">{c.label}</span>
+                    <span className="block text-xs text-primary-foreground/75">{c.label}</span>
                     <span className="block text-sm font-medium text-primary-foreground truncate">{c.value}</span>
                   </span>
                 </a>
