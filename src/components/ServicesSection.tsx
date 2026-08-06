@@ -1,7 +1,7 @@
 import { Building2, Check, GraduationCap, Rocket } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import TiltCard from "@/components/shared/TiltCard";
-import { links, mailto } from "@/config/links";
+import { mailto } from "@/config/links";
 
 const services = [
   {
@@ -9,8 +9,8 @@ const services = [
     title: "For Students",
     blurb: "Clarity on what to build, learn, and pitch next.",
     items: ["Career Roadmap", "AI Guidance", "Resume Review", "Mock Interview"],
-    cta: "Book a Session",
-    href: links.topmate,
+    cta: "Get in Touch",
+    href: mailto,
   },
   {
     icon: Rocket,
