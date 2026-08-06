@@ -129,26 +129,10 @@ const HeroSection = () => {
               className="flex flex-wrap gap-3 pt-1"
             >
               <a
-                href={links.booking}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={mailto}
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold hover:scale-[1.04] hover:shadow-[var(--shadow-glow)] transition-all"
               >
-                <CalendarCheck size={16} /> Book a Meeting
-              </a>
-              <a
-                href={mailto}
-                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
-              >
                 <Handshake size={16} /> Let's Collaborate
-              </a>
-              <a
-                href={links.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
-              >
-                <Download size={16} /> Download Resume
               </a>
               <a
                 href="#journey"
