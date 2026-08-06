@@ -32,11 +32,8 @@ const rotating = [
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
   { icon: Instagram, label: "Instagram", href: links.instagram },
-  { icon: Github, label: "GitHub", href: links.github },
-  { icon: Sparkles, label: "X (Twitter)", href: links.x },
   { icon: Mail, label: "Email", href: mailto },
   { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
-  { icon: CalendarCheck, label: "Topmate", href: links.topmate },
 ];
 
 const HeroSection = () => {
