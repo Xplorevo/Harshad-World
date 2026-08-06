@@ -97,14 +97,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a
-              href={links.booking}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold text-center mt-3"
-            >
-              Let's Talk
-            </a>
           </div>
         </div>
       )}
