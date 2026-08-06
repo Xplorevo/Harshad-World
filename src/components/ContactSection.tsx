@@ -1,9 +1,7 @@
 import { useState } from "react";
 import {
-  CalendarCheck,
   Check,
   Copy,
-  Github,
   Instagram,
   Linkedin,
   Mail,
@@ -19,8 +17,6 @@ const channels = [
   { icon: Phone, label: "Phone", value: links.phoneDisplay, href: tel },
   { icon: Linkedin, label: "LinkedIn", value: "harshad-pakhale-221hp", href: links.linkedin },
   { icon: Instagram, label: "Instagram", value: "harshad.h.pakhale.01", href: links.instagram },
-  { icon: Github, label: "GitHub", value: "harshadpakhale", href: links.github },
-  { icon: CalendarCheck, label: "Topmate", value: "Book a 1:1 session", href: links.topmate },
 ];
 
 const ContactSection = () => {
@@ -66,14 +62,6 @@ const ContactSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-6">
-              <a
-                href={links.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-electric to-violet text-primary-foreground px-6 py-3 rounded-xl text-sm font-semibold hover:scale-105 transition-transform"
-              >
-                <CalendarCheck size={17} /> Book a Meeting
-              </a>
               <a
                 href={links.whatsapp}
                 target="_blank"

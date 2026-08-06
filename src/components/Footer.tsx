@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Instagram, Linkedin, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
+import { Instagram, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import ecellLogo from "@/assets/ecell-logo.png";
 import xtnLogo from "@/assets/xtn-logo.png";
@@ -18,8 +18,6 @@ const quickLinks = [
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
   { icon: Instagram, label: "Instagram", href: links.instagram },
-  { icon: Github, label: "GitHub", href: links.github },
-  { icon: Sparkles, label: "X (Twitter)", href: links.x },
   { icon: Mail, label: "Email", href: mailto },
   { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
 ];

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
-import { links } from "@/config/links";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -73,14 +72,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href={links.booking}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 bg-primary text-primary-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 hover:shadow-[var(--shadow-glow)] transition-all"
-          >
-            Let's Talk
-          </a>
         </div>
 
         <button
@@ -106,14 +97,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a
-              href={links.booking}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold text-center mt-3"
-            >
-              Let's Talk
-            </a>
           </div>
         </div>
       )}

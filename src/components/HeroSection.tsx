@@ -2,17 +2,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  CalendarCheck,
-  Download,
   ExternalLink,
-  Github,
   Handshake,
   Instagram,
   Linkedin,
   Mail,
   MessageCircle,
   Palette,
-  Sparkles,
 } from "lucide-react";
 import profileImg from "@/assets/profile2.jpg";
 import profileImg2 from "@/assets/profile-iitb.jpg";
@@ -36,11 +32,8 @@ const rotating = [
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
   { icon: Instagram, label: "Instagram", href: links.instagram },
-  { icon: Github, label: "GitHub", href: links.github },
-  { icon: Sparkles, label: "X (Twitter)", href: links.x },
   { icon: Mail, label: "Email", href: mailto },
   { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
-  { icon: CalendarCheck, label: "Topmate", href: links.topmate },
 ];
 
 const HeroSection = () => {
@@ -136,26 +129,10 @@ const HeroSection = () => {
               className="flex flex-wrap gap-3 pt-1"
             >
               <a
-                href={links.booking}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={mailto}
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold hover:scale-[1.04] hover:shadow-[var(--shadow-glow)] transition-all"
               >
-                <CalendarCheck size={16} /> Book a Meeting
-              </a>
-              <a
-                href={mailto}
-                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
-              >
                 <Handshake size={16} /> Let's Collaborate
-              </a>
-              <a
-                href={links.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl text-sm font-semibold text-foreground hover:scale-[1.04] transition-all"
-              >
-                <Download size={16} /> Download Resume
               </a>
               <a
                 href="#journey"
