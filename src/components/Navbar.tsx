@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
-import { links } from "@/config/links";
 
 const navLinks = [
   { label: "About", href: "#about" },
