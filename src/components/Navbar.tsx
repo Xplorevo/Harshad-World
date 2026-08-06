@@ -73,14 +73,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href={links.booking}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 bg-primary text-primary-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 hover:shadow-[var(--shadow-glow)] transition-all"
-          >
-            Let's Talk
-          </a>
         </div>
 
         <button
