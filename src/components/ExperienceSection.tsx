@@ -59,6 +59,12 @@ const experiences: Experience[] = [
     points: ["Business strategy", "Market research", "Requirement analysis", "AI product planning"],
   },
   {
+    role: "Business Analyst & Tech Intern",
+    company: "Stepup Intern",
+    meta: "Hyderabad",
+    points: ["Business analysis", "Technical execution", "Product research", "Client deliverables"],
+  },
+  {
     role: "Graphics Designer",
     company: "EIC Club",
     points: ["Brand identity", "Creative design", "Marketing assets", "Digital branding"],

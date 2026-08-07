@@ -11,6 +11,8 @@ export const links = {
   x: "https://x.com/harshadpakhale",
   topmate: "https://topmate.io/harshad_pakhale",
   designPortfolio: "https://harshu-graphics.netlify.app/",
+  yojanaradar: "https://yojanaradar.tech",
+  portfolio: "https://harshadpakhale.dpdns.org/",
   xplorevo: "https://xplorevo.com",
   xtn: "https://xplorevo.tech",
   ecell: "https://ecellmeswcoe.netlify.com",

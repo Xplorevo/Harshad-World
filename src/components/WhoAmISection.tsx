@@ -3,6 +3,7 @@ import {
   Brain,
   Code2,
   Crown,
+  Flag,
   GraduationCap,
   Palette,
   Rocket,
@@ -14,12 +15,14 @@ import SectionHeading from "@/components/shared/SectionHeading";
 const steps = [
   { icon: GraduationCap, label: "Student", desc: "Computer Engineering at MES Wadia College of Engineering, Pune." },
   { icon: Palette, label: "Designer", desc: "Brand identity, campaign creatives, and digital design systems." },
-  { icon: Code2, label: "Developer", desc: "Full stack products with React, Next.js, and modern cloud tooling." },
+  { icon: Code2, label: "AI Full Stack Developer", desc: "AI full stack developer — build to deployment. AI tool expert. Projects like yojanaradar.tech, xplorevo.tech, and this portfolio." },
   { icon: Rocket, label: "Founder", desc: "Turned an idea into Xplorevo — a travel-tech venture." },
   { icon: Crown, label: "CEO", desc: "Leading strategy, product, partnerships, and investor readiness." },
   { icon: Users, label: "Community Builder", desc: "E-Cell and Xplorevo Tech Network — thousands of students reached." },
   { icon: Brain, label: "AI Entrepreneur", desc: "Shipping AI-first products and automation for real problems." },
   { icon: Zap, label: "Technology Leader", desc: "Mentoring teams, founders, and students across the ecosystem." },
+  { icon: Crown, label: "Founder & President — E-Cell", desc: "Entrepreneurship Cell, Modern Education Society Wadia College of Engineering, Pune." },
+  { icon: Flag, label: "Campus Ambassador", desc: "IIT Mandi · IIT Guwahati · IIT Bombay." },
 ];
 
 const WhoAmISection = () => (
