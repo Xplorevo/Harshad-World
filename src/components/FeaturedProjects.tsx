@@ -14,6 +14,7 @@ const projects = [
     title: "YojanaRadar",
     tagline: "AI-powered platform that matches citizens with government schemes.",
     tags: ["AI", "Public Tech", "React", "LLM"],
+    href: links.yojanaradar,
   },
   {
     title: "Xplorevo Tech Network",
@@ -31,6 +32,7 @@ const projects = [
     title: "Portfolio Website",
     tagline: "This site — a cinematic, performance-first founder portfolio.",
     tags: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+    href: links.portfolio,
   },
   {
     title: "Graphics Portfolio",

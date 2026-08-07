@@ -7,26 +7,26 @@ const testimonials = [
   {
     quote:
       "Harshad built the Entrepreneurship Cell from nothing into a genuine campus ecosystem. His ability to rally people around a mission is rare at this stage of a career.",
-    name: "Faculty Mentor",
-    role: "MES Wadia College of Engineering",
+    name: "Prof. Shrikant Dhawale",
+    role: "Faculty, MES Wadia College of Engineering",
   },
   {
     quote:
       "Sharp product thinking and relentless follow-through. He asks the right questions about users and business model before writing a single line of code.",
-    name: "Startup Founder",
-    role: "Pune Startup Ecosystem",
+    name: "Mr. Vaidyanath Bobilli",
+    role: "Startup Founder",
   },
   {
     quote:
       "His mentorship gave me a clear roadmap — from picking a stack to pitching my idea. One session changed how I approach building.",
-    name: "Student Mentee",
-    role: "Topmate Session",
+    name: "Sihals Solanki",
+    role: "Student Mentee",
   },
   {
     quote:
-      "Worked with Harshad on brand and campaign design. Fast, thoughtful, and always aligned with the business outcome, not just the visuals.",
-    name: "Client",
-    role: "Brand & Design Project",
+      "Harshad guided me through building and pitching my first project. Practical advice, honest feedback, and genuine support throughout.",
+    name: "Janhavi Todkar",
+    role: "Student Mentee",
   },
 ];
 
