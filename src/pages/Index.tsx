@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import Seo from "@/components/Seo";
 import { AudioProvider } from "@/components/AudioProvider";
 import CinematicIntro from "@/components/CinematicIntro";
 import MuteToggle from "@/components/MuteToggle";
