@@ -31,6 +31,12 @@ const Index = () => {
 
   return (
     <AudioProvider>
+      <Seo
+        title="Harshad Harishchandra Pakhale | Founder, CEO & AI Entrepreneur"
+        description="Founder & CEO of Xplorevo Pvt Ltd. AI entrepreneur, full stack developer, startup mentor and community builder from Pune, India."
+        path="/"
+        type="profile"
+      />
       {!introComplete && <CinematicIntro onComplete={handleIntroComplete} />}
       {introComplete && (
         <>
