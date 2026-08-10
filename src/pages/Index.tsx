@@ -20,6 +20,8 @@ import MagazinesSection from "@/components/MagazinesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
+import FaqSection from "@/components/FaqSection";
+
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
@@ -60,7 +62,9 @@ const Index = () => {
           <MagazinesSection />
           <TestimonialsSection />
           <ServicesSection />
+          <FaqSection />
           <ContactSection />
+
         </main>
         <Footer />
         <FloatingWhatsApp />
