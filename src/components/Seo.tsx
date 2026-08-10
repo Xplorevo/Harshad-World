@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE_URL = "https://harshad-pakhale-dot-dev.lovable.app";
-const DEFAULT_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/1SiW0cjhJ9QgZh7Q0y39oEUytES2/social-images/social-1774970122351-profile.webp";
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 
 interface SeoProps {
   title: string;
@@ -28,7 +28,12 @@ const Seo = ({ title, description, path, image = DEFAULT_IMAGE, type = "website"
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:secure_url" content={image} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
+
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
