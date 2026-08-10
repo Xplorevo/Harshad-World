@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { links, mailto, tel } from "@/config/links";
+import { trackCta } from "@/lib/analytics";
+
 
 const channels = [
   { icon: Mail, label: "Email", value: links.email, href: mailto },
@@ -48,8 +50,15 @@ const ContactSection = () => {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackCta(
+                      c.label === "Email" ? "email_contact" : "book_appointment",
+                      `contact_channel_${c.label.toLowerCase()}`,
+                    )
+                  }
                   className="glass rounded-2xl p-4 flex items-start gap-3 hover:scale-[1.03] transition-transform"
                 >
+
                   <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-electric/25 to-violet/25 flex items-center justify-center flex-shrink-0">
                     <c.icon size={16} className="text-cyan" />
                   </span>
@@ -66,8 +75,10 @@ const ContactSection = () => {
                 href={links.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackCta("whatsapp_chat", "contact_section")}
                 className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-green-600 transition-colors"
               >
+
                 <MessageCircle size={17} /> WhatsApp
               </a>
               <button
