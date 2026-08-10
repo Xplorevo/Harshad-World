@@ -15,6 +15,7 @@ import profileImg2 from "@/assets/profile-iitb.jpg";
 import ParticleField from "@/components/shared/ParticleField";
 import Typewriter from "@/components/shared/Typewriter";
 import { links, mailto } from "@/config/links";
+import { trackCta } from "@/lib/analytics";
 
 const images = [profileImg, profileImg2];
 
