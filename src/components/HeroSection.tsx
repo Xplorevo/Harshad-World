@@ -15,6 +15,7 @@ import profileImg2 from "@/assets/profile-iitb.jpg";
 import ParticleField from "@/components/shared/ParticleField";
 import Typewriter from "@/components/shared/Typewriter";
 import { links, mailto } from "@/config/links";
+import { trackCta } from "@/lib/analytics";
 
 const images = [profileImg, profileImg2];
 
@@ -130,8 +131,10 @@ const HeroSection = () => {
             >
               <a
                 href={mailto}
+                onClick={() => trackCta("startup_collaboration", "hero")}
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl text-sm font-semibold hover:scale-[1.04] hover:shadow-[var(--shadow-glow)] transition-all"
               >
+
                 <Handshake size={16} /> Let's Collaborate
               </a>
               <a
