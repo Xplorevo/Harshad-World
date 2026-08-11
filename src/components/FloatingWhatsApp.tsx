@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { links } from "@/config/links";
-import { trackCta } from "@/lib/analytics";
+import { trackCta, trackOutboundConversion } from "@/lib/analytics";
 
 const FloatingWhatsApp = () => {
   return (
@@ -8,7 +8,10 @@ const FloatingWhatsApp = () => {
       href={links.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackCta("whatsapp_chat", "floating_button")}
+      onClick={() => {
+        trackCta("whatsapp_chat", "floating_button");
+        trackOutboundConversion("whatsapp_open_success", "floating_button");
+      }}
       className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300"
       aria-label="Chat on WhatsApp"
     >

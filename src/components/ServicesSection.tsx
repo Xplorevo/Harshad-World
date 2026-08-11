@@ -2,7 +2,7 @@ import { Building2, Check, GraduationCap, Rocket } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import TiltCard from "@/components/shared/TiltCard";
 import { mailto } from "@/config/links";
-import { trackCta } from "@/lib/analytics";
+import { trackCta, trackOutboundConversion } from "@/lib/analytics";
 
 
 const services = [
@@ -79,12 +79,16 @@ const ServicesSection = () => (
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              onClick={() =>
-                trackCta(
-                  s.title === "For Startups" ? "startup_collaboration" : "book_appointment",
-                  `services_${s.title.toLowerCase().replace(/\s+/g, "_")}`,
-                )
-              }
+              onClick={() => {
+                const location = `services_${s.title.toLowerCase().replace(/\s+/g, "_")}`;
+                const isStartup = s.title === "For Startups";
+                trackCta(isStartup ? "startup_collaboration" : "book_appointment", location);
+                trackOutboundConversion(
+                  isStartup ? "collaboration_contact_submit" : "appointment_form_submit",
+                  location,
+                  { service: s.title },
+                );
+              }}
 
               className={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-[1.03] w-full ${
                 s.featured

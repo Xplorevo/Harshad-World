@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { links, mailto, tel } from "@/config/links";
-import { trackCta } from "@/lib/analytics";
+import { trackCta, trackConversion, trackOutboundConversion } from "@/lib/analytics";
 
 
 const channels = [
@@ -27,6 +27,7 @@ const ContactSection = () => {
   const copyEmail = async () => {
     await navigator.clipboard.writeText(links.email);
     setCopied(true);
+    trackConversion("email_copied", "contact_section", { channel: "Email" });
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -50,12 +51,15 @@ const ContactSection = () => {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  onClick={() =>
-                    trackCta(
-                      c.label === "Email" ? "email_contact" : "book_appointment",
-                      `contact_channel_${c.label.toLowerCase()}`,
-                    )
-                  }
+                  onClick={() => {
+                    const location = `contact_channel_${c.label.toLowerCase()}`;
+                    trackCta(c.label === "Email" ? "email_contact" : "book_appointment", location);
+                    trackOutboundConversion(
+                      c.label === "Email" ? "collaboration_contact_submit" : "appointment_form_submit",
+                      location,
+                      { channel: c.label },
+                    );
+                  }}
                   className="glass rounded-2xl p-4 flex items-start gap-3 hover:scale-[1.03] transition-transform"
                 >
 
@@ -75,7 +79,10 @@ const ContactSection = () => {
                 href={links.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackCta("whatsapp_chat", "contact_section")}
+                onClick={() => {
+                  trackCta("whatsapp_chat", "contact_section");
+                  trackOutboundConversion("whatsapp_open_success", "contact_section");
+                }}
                 className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-green-600 transition-colors"
               >
 
