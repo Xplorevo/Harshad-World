@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-08-11T08:58:42.712Z",
+  "siteUrl": "https://harshad-pakhale-dot-dev.lovable.app",
+  "ogVersion": "2026-08-11",
+  "checks": [
+    {
+      "id": "robots-exists",
+      "label": "robots.txt exists",
+      "status": "pass",
+      "detail": "public/robots.txt found"
+    },
+    {
+      "id": "robots-allows",
+      "label": "robots.txt does not block crawlers",
+      "status": "pass",
+      "detail": "Crawling allowed"
+    },
+    {
+      "id": "robots-sitemap",
+      "label": "robots.txt advertises the sitemap",
+      "status": "pass",
+      "detail": "Sitemap: https://harshad-pakhale-dot-dev.lovable.app/sitemap.xml"
+    },
+    {
+      "id": "sitemap-exists",
+      "label": "sitemap.xml exists",
+      "status": "pass",
+      "detail": "public/sitemap.xml found"
+    },
+    {
+      "id": "sitemap-routes",
+      "label": "Every indexable route is in the sitemap",
+      "status": "pass",
+      "detail": "1 URL(s): https://harshad-pakhale-dot-dev.lovable.app/"
+    },
+    {
+      "id": "sitemap-noindex",
+      "label": "No noindex route leaked into the sitemap",
+      "status": "pass",
+      "detail": "Clean"
+    },
+    {
+      "id": "sitemap-lastmod",
+      "label": "No build-time lastmod values",
+      "status": "pass",
+      "detail": "No lastmod (correct for a static site)"
+    },
+    {
+      "id": "routes-meta",
+      "label": "Canonical / OG / Twitter tags valid on every route",
+      "status": "pass",
+      "detail": "3 route(s) validated"
+    },
+    {
+      "id": "og-cache-headers",
+      "label": "OG images served with long-lived cache headers",
+      "status": "pass",
+      "detail": "Immutable caching configured for /og/*"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "title": "Harshad Pakhale | Founder, CEO & AI Entrepreneur",
+      "description": "Founder & CEO of Xplorevo Pvt Ltd. AI entrepreneur, full stack developer, startup mentor and community builder from Pune, India.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-home.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "Harshad Harishchandra Pakhale — Founder & CEO of Xplorevo",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/seo-check",
+      "title": "SEO Health Check | Harshad Harishchandra Pakhale",
+      "description": "Build-time validation of sitemap.xml, robots.txt and per-route canonical, Open Graph and Twitter Card tags.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/seo-check",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-seo-check.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "SEO health check dashboard",
+      "twitterCard": "summary_large_image",
+      "indexable": false,
+      "noindex": true,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/404",
+      "title": "Page not found | Harshad Harishchandra Pakhale",
+      "description": "This page doesn't exist. Head back to the portfolio of Harshad Harishchandra Pakhale, Founder & CEO of Xplorevo Pvt Ltd.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/404",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-404.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "404 — page not found",
+      "twitterCard": "summary_large_image",
+      "indexable": false,
+      "noindex": true,
+      "status": "pass",
+      "issues": []
+    }
+  ],
+  "failures": 0
+}

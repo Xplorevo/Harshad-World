@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import Seo from "@/components/Seo";
+import { routeSeo } from "@/config/seo";
 import { AudioProvider } from "@/components/AudioProvider";
 import CinematicIntro from "@/components/CinematicIntro";
 import MuteToggle from "@/components/MuteToggle";
@@ -34,10 +35,14 @@ const Index = () => {
   return (
     <AudioProvider>
       <Seo
-        title="Harshad Harishchandra Pakhale | Founder, CEO & AI Entrepreneur"
-        description="Founder & CEO of Xplorevo Pvt Ltd. AI entrepreneur, full stack developer, startup mentor and community builder from Pune, India."
-        path="/"
-        type="profile"
+        title={routeSeo.home.title}
+        description={routeSeo.home.description}
+        path={routeSeo.home.path}
+        image={routeSeo.home.image}
+        imageWidth={routeSeo.home.imageWidth}
+        imageHeight={routeSeo.home.imageHeight}
+        imageAlt={routeSeo.home.imageAlt}
+        type={routeSeo.home.type}
       />
       {!introComplete && <CinematicIntro onComplete={handleIntroComplete} />}
       {introComplete && (

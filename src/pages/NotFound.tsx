@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Seo from "@/components/Seo";
+import { routeSeo } from "@/config/seo";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,9 +13,13 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <Seo
-        title="Page not found | Harshad Harishchandra Pakhale"
-        description="This page doesn't exist. Head back to the portfolio of Harshad Harishchandra Pakhale, Founder & CEO of Xplorevo Pvt Ltd."
+        title={routeSeo.notFound.title}
+        description={routeSeo.notFound.description}
         path={location.pathname}
+        image={routeSeo.notFound.image}
+        imageWidth={routeSeo.notFound.imageWidth}
+        imageHeight={routeSeo.notFound.imageHeight}
+        imageAlt={routeSeo.notFound.imageAlt}
         noindex
       />
       <div className="text-center">
