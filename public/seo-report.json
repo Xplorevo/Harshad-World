@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T08:58:34.891Z",
+  "generatedAt": "2026-08-11T08:58:42.712Z",
   "siteUrl": "https://harshad-pakhale-dot-dev.lovable.app",
   "ogVersion": "2026-08-11",
   "checks": [
@@ -48,8 +48,8 @@
     {
       "id": "routes-meta",
       "label": "Canonical / OG / Twitter tags valid on every route",
-      "status": "fail",
-      "detail": "/: Title is 62 chars (>60)"
+      "status": "pass",
+      "detail": "3 route(s) validated"
     },
     {
       "id": "og-cache-headers",
@@ -61,7 +61,7 @@
   "routes": [
     {
       "path": "/",
-      "title": "Harshad Harishchandra Pakhale | Founder, CEO & AI Entrepreneur",
+      "title": "Harshad Pakhale | Founder, CEO & AI Entrepreneur",
       "description": "Founder & CEO of Xplorevo Pvt Ltd. AI entrepreneur, full stack developer, startup mentor and community builder from Pune, India.",
       "canonical": "https://harshad-pakhale-dot-dev.lovable.app/",
       "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-home.jpg?v=2026-08-11",
@@ -71,10 +71,8 @@
       "twitterCard": "summary_large_image",
       "indexable": true,
       "noindex": false,
-      "status": "fail",
-      "issues": [
-        "Title is 62 chars (>60)"
-      ]
+      "status": "pass",
+      "issues": []
     },
     {
       "path": "/seo-check",
@@ -107,5 +105,5 @@
       "issues": []
     }
   ],
-  "failures": 1
+  "failures": 0
 }

@@ -21,7 +21,7 @@ export interface RouteSeo {
 export const routeSeo = {
   home: {
     path: "/",
-    title: "Harshad Harishchandra Pakhale | Founder, CEO & AI Entrepreneur",
+    title: "Harshad Pakhale | Founder, CEO & AI Entrepreneur",
     description:
       "Founder & CEO of Xplorevo Pvt Ltd. AI entrepreneur, full stack developer, startup mentor and community builder from Pune, India.",
     image: "/og/og-home.jpg",
