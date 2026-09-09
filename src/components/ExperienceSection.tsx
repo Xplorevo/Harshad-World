@@ -20,6 +20,47 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    role: "Youth Mentor",
+    company: "Changemaker Academy",
+    meta: "Part-time · India · Remote",
+    period: "Sep 2026 — Present",
+    logo: changemakerAsset.url,
+    points: [
+      "Recognized among Changemaker Academy's Top Mentors",
+      "Guiding students and young founders on startup validation",
+      "Coaching on product clarity and technology integration",
+      "Helping changemakers turn ideas into actionable plans",
+    ],
+  },
+  {
+    role: "External Mentor",
+    company: "E-Cell, IIT Bombay",
+    meta: "Full-time · Pune District, Maharashtra, India · Remote",
+    period: "Aug 2026 — Present",
+    logo: ecellIitbAsset.url,
+    points: [
+      "Building strong teams and student leadership",
+      "Increasing student engagement across campuses",
+      "Planning impactful events and initiatives",
+      "Strengthening entrepreneurship culture on campus",
+      "Solving execution and management challenges",
+      "Creating sustainable growth beyond just events",
+    ],
+  },
+  {
+    role: "Business Mentor",
+    company: "Unstop",
+    meta: "Part-time · India · Remote",
+    period: "Jun 2026 — Present",
+    logo: unstopAsset.url,
+    points: [
+      "Mentored students in hackathons and AI tools",
+      "Guidance on resume building, career planning and branding",
+      "Actionable insights on internships and leadership development",
+      "Supported aspiring entrepreneurs with practical strategy",
+    ],
+  },
+  {
     role: "Founder & CEO",
     company: "Xplorevo Pvt Ltd",
     meta: "TravelTech Startup",
