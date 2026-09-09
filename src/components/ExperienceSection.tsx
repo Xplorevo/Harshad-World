@@ -117,6 +117,7 @@ const experiences: Experience[] = [
   {
     role: "Startup Mentor",
     company: "Topmate",
+    logo: topmateAsset.url,
     points: ["Career mentoring", "Startup guidance", "Product strategy", "AI consulting"],
   },
 ];
