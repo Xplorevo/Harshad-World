@@ -4,6 +4,10 @@ import TiltCard from "@/components/shared/TiltCard";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import xtnLogo from "@/assets/xtn-logo.png";
 import ecellLogo from "@/assets/ecell-logo.png";
+import changemakerAsset from "@/assets/changemaker-logo.asset.json";
+import ecellIitbAsset from "@/assets/ecell-iitb-logo.asset.json";
+import unstopAsset from "@/assets/unstop-logo.asset.json";
+import topmateAsset from "@/assets/topmate-logo.asset.json";
 
 interface Experience {
   role: string;
