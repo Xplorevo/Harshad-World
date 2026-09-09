@@ -4,6 +4,10 @@ import TiltCard from "@/components/shared/TiltCard";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import xtnLogo from "@/assets/xtn-logo.png";
 import ecellLogo from "@/assets/ecell-logo.png";
+import changemakerAsset from "@/assets/changemaker-logo.asset.json";
+import ecellIitbAsset from "@/assets/ecell-iitb-logo.asset.json";
+import unstopAsset from "@/assets/unstop-logo.asset.json";
+import topmateAsset from "@/assets/topmate-logo.asset.json";
 
 interface Experience {
   role: string;
@@ -15,6 +19,47 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    role: "Youth Mentor",
+    company: "Changemaker Academy",
+    meta: "Part-time · India · Remote",
+    period: "Sep 2026 — Present",
+    logo: changemakerAsset.url,
+    points: [
+      "Recognized among Changemaker Academy's Top Mentors",
+      "Guiding students and young founders on startup validation",
+      "Coaching on product clarity and technology integration",
+      "Helping changemakers turn ideas into actionable plans",
+    ],
+  },
+  {
+    role: "External Mentor",
+    company: "E-Cell, IIT Bombay",
+    meta: "Full-time · Pune District, Maharashtra, India · Remote",
+    period: "Aug 2026 — Present",
+    logo: ecellIitbAsset.url,
+    points: [
+      "Building strong teams and student leadership",
+      "Increasing student engagement across campuses",
+      "Planning impactful events and initiatives",
+      "Strengthening entrepreneurship culture on campus",
+      "Solving execution and management challenges",
+      "Creating sustainable growth beyond just events",
+    ],
+  },
+  {
+    role: "Business Mentor",
+    company: "Unstop",
+    meta: "Part-time · India · Remote",
+    period: "Jun 2026 — Present",
+    logo: unstopAsset.url,
+    points: [
+      "Mentored students in hackathons and AI tools",
+      "Guidance on resume building, career planning and branding",
+      "Actionable insights on internships and leadership development",
+      "Supported aspiring entrepreneurs with practical strategy",
+    ],
+  },
   {
     role: "Founder & CEO",
     company: "Xplorevo Pvt Ltd",
@@ -72,6 +117,7 @@ const experiences: Experience[] = [
   {
     role: "Startup Mentor",
     company: "Topmate",
+    logo: topmateAsset.url,
     points: ["Career mentoring", "Startup guidance", "Product strategy", "AI consulting"],
   },
 ];
@@ -89,8 +135,8 @@ const ExperienceSection = () => (
         <div className="absolute left-7 top-2 bottom-2 w-px bg-border hidden md:block" aria-hidden="true" />
         <div className="space-y-6">
           {experiences.map((exp, i) => (
-            <div key={exp.role + exp.company} className="relative flex gap-6">
-              <div className="hidden md:flex flex-shrink-0 w-14 h-14 rounded-2xl glass-strong items-center justify-center z-10 overflow-hidden">
+            <div key={exp.role + exp.company} className="relative flex gap-3 md:gap-6">
+              <div className="flex flex-shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-2xl glass-strong items-center justify-center z-10 overflow-hidden">
                 {exp.logo ? (
                   <img src={exp.logo} alt={`${exp.company} logo`} loading="lazy" className="w-9 h-9 object-contain rounded-md" />
                 ) : (

@@ -81,7 +81,7 @@ const JourneyGlimpses = () => {
                     onClick={() => setLightbox(i)}
                     className="relative block w-full h-[260px] md:h-[300px] rounded-2xl overflow-hidden group shadow-[var(--shadow-card)] bg-card"
                   >
-                    <img src={img.src} alt={img.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={img.src} alt={img.title} loading="eager" decoding="async" fetchPriority="high" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent flex items-end p-4">
                       <div className="text-left">
                         <p className="text-primary-foreground text-sm font-bold">{img.title}</p>

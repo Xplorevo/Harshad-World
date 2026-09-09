@@ -83,7 +83,7 @@ const CertificationsSection = () => {
                     className="group block w-full rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                   >
                     <div className="aspect-[4/3] overflow-hidden">
-                      <img src={getThumb(cert.id)} alt={`Certificate ${i + 1}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={getThumb(cert.id)} alt={`Certificate ${i + 1}`} loading="eager" decoding="async" referrerPolicy="no-referrer" className="w-full h-full object-contain bg-muted group-hover:scale-105 transition-transform duration-500" />
                     </div>
                   </button>
                 </div>
