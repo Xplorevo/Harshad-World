@@ -135,7 +135,7 @@ const ExperienceSection = () => (
         <div className="absolute left-7 top-2 bottom-2 w-px bg-border hidden md:block" aria-hidden="true" />
         <div className="space-y-6">
           {experiences.map((exp, i) => (
-            <div key={exp.role + exp.company} className="relative flex gap-6">
+            <div key={exp.role + exp.company} className="relative flex gap-3 md:gap-6">
               <div className="flex flex-shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-2xl glass-strong items-center justify-center z-10 overflow-hidden">
                 {exp.logo ? (
                   <img src={exp.logo} alt={`${exp.company} logo`} loading="lazy" className="w-9 h-9 object-contain rounded-md" />
