@@ -1,4 +1,6 @@
 // Single source of truth for per-route SEO / social-preview metadata.
+import { posts } from "./posts";
+
 export const SITE_URL = "https://harshad-pakhale-dot-dev.lovable.app";
 
 // Bump when any OG image is regenerated — appended as ?v= for cache busting.
@@ -43,6 +45,17 @@ export const routeSeo = {
     noindex: true,
     indexable: false,
   },
+  blog: {
+    path: "/blog",
+    title: "Blog | Harshad Pakhale on Startups & AI",
+    description:
+      "Essays by Harshad Pakhale on building startups like Xplorevo and YojanaRadar, shipping AI products end to end, and mentoring student founders.",
+    image: "/og/og-blog.jpg",
+    imageWidth: 1200,
+    imageHeight: 630,
+    imageAlt: "Blog — Harshad Pakhale on startups, AI and mentorship",
+    indexable: true,
+  },
   notFound: {
     path: "/404",
     title: "Page not found | Harshad Harishchandra Pakhale",
@@ -57,7 +70,19 @@ export const routeSeo = {
   },
 } satisfies Record<string, RouteSeo>;
 
-export const allRoutes: RouteSeo[] = Object.values(routeSeo);
+export const postRoutes: RouteSeo[] = posts.map((p) => ({
+  path: `/blog/${p.slug}`,
+  title: p.title,
+  description: p.description,
+  image: "/og/og-blog.jpg",
+  imageWidth: 1200,
+  imageHeight: 630,
+  imageAlt: p.title,
+  type: "article",
+  indexable: true,
+}));
+
+export const allRoutes: RouteSeo[] = [...Object.values(routeSeo), ...postRoutes];
 
 export const absoluteOgImage = (image: string) =>
   `${SITE_URL}${image}?v=${OG_VERSION}`;
