@@ -14,3 +14,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://harshad-pakhale-dot-dev.lovable.app/sitemap.xml
+Sitemap: https://harshad-pakhale-dot-dev.lovable.app/sitemap-blog.xml

@@ -59,6 +59,12 @@ const Navbar = () => {
         </a>
 
         <div className="hidden xl:flex items-center gap-1">
+          <a
+            href="/blog"
+            className="text-sm font-medium px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Blog
+          </a>
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -87,6 +93,12 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="xl:hidden glass border-t border-border animate-fade-in">
           <div className="container mx-auto px-4 py-5 flex flex-col gap-1">
+            <a
+              href="/blog"
+              className="text-base font-medium text-foreground hover:text-primary transition-colors py-2.5 border-b border-border/40"
+            >
+              Blog
+            </a>
             {navLinks.map((link) => (
               <a
                 key={link.href}
