@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T15:44:39.931Z",
+  "generatedAt": "2026-09-10T15:47:02.316Z",
   "siteUrl": "https://harshad-pakhale-dot-dev.lovable.app",
   "ogVersion": "2026-08-11",
   "checks": [
@@ -31,7 +31,7 @@
       "id": "sitemap-routes",
       "label": "Every indexable route is in the sitemap",
       "status": "pass",
-      "detail": "1 URL(s): https://harshad-pakhale-dot-dev.lovable.app/"
+      "detail": "6 URL(s): https://harshad-pakhale-dot-dev.lovable.app/, https://harshad-pakhale-dot-dev.lovable.app/blog, https://harshad-pakhale-dot-dev.lovable.app/blog/building-xplorevo-traveltech-for-students, https://harshad-pakhale-dot-dev.lovable.app/blog/yojanaradar-ai-for-government-schemes, https://harshad-pakhale-dot-dev.lovable.app/blog/ai-full-stack-shipping-to-deployment, https://harshad-pakhale-dot-dev.lovable.app/blog/mentoring-student-founders"
     },
     {
       "id": "sitemap-noindex",
@@ -49,7 +49,7 @@
       "id": "routes-meta",
       "label": "Canonical / OG / Twitter tags valid on every route",
       "status": "pass",
-      "detail": "3 route(s) validated"
+      "detail": "8 route(s) validated"
     },
     {
       "id": "og-cache-headers",
@@ -90,6 +90,21 @@
       "issues": []
     },
     {
+      "path": "/blog",
+      "title": "Blog | Harshad Pakhale on Startups & AI",
+      "description": "Essays by Harshad Pakhale on building startups like Xplorevo and YojanaRadar, shipping AI products end to end, and mentoring student founders.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/blog",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-blog.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "Blog — Harshad Pakhale on startups, AI and mentorship",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
+      "status": "pass",
+      "issues": []
+    },
+    {
       "path": "/404",
       "title": "Page not found | Harshad Harishchandra Pakhale",
       "description": "This page doesn't exist. Head back to the portfolio of Harshad Harishchandra Pakhale, Founder & CEO of Xplorevo Pvt Ltd.",
@@ -101,6 +116,66 @@
       "twitterCard": "summary_large_image",
       "indexable": false,
       "noindex": true,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/blog/building-xplorevo-traveltech-for-students",
+      "title": "Building Xplorevo: TravelTech for Students",
+      "description": "How Xplorevo went from a student-travel frustration in Pune to a TravelTech product, and the product decisions that shaped it.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/blog/building-xplorevo-traveltech-for-students",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-blog.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "Building Xplorevo: TravelTech for Students",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/blog/yojanaradar-ai-for-government-schemes",
+      "title": "YojanaRadar: Using AI to Make Government Schemes Findable",
+      "description": "Behind YojanaRadar — an AI project that matches citizens with the government schemes they actually qualify for.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/blog/yojanaradar-ai-for-government-schemes",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-blog.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "YojanaRadar: Using AI to Make Government Schemes Findable",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/blog/ai-full-stack-shipping-to-deployment",
+      "title": "AI Full Stack: Shipping Projects All the Way to Deployment",
+      "description": "The stack and habits I use to take AI products from an empty repo to a live, monitored deployment.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/blog/ai-full-stack-shipping-to-deployment",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-blog.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "AI Full Stack: Shipping Projects All the Way to Deployment",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "path": "/blog/mentoring-student-founders",
+      "title": "What I Learned Mentoring Student Founders",
+      "description": "Notes from mentoring students and early founders through E-Cell, Unstop and Changemaker Academy.",
+      "canonical": "https://harshad-pakhale-dot-dev.lovable.app/blog/mentoring-student-founders",
+      "ogImage": "https://harshad-pakhale-dot-dev.lovable.app/og/og-blog.jpg?v=2026-08-11",
+      "ogImageWidth": 1200,
+      "ogImageHeight": 630,
+      "ogImageAlt": "What I Learned Mentoring Student Founders",
+      "twitterCard": "summary_large_image",
+      "indexable": true,
+      "noindex": false,
       "status": "pass",
       "issues": []
     }
