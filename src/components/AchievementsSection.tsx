@@ -107,6 +107,7 @@ const AchievementsSection = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default AchievementsSection;
