@@ -4,10 +4,10 @@ import TiltCard from "@/components/shared/TiltCard";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import xtnLogo from "@/assets/xtn-logo.png";
 import ecellLogo from "@/assets/ecell-logo.png";
-import changemakerImg from "@/assets/changemaker-logo";
-import ecellIitbImg from "@/assets/ecell-iitb-logo";
-import unstopImg from "@/assets/unstop-logo";
-import topmateImg from "@/assets/topmate-logo";
+import changemakerImg from "@/assets/changemaker-logo.png";
+import ecellIitbImg from "@/assets/ecell-iitb-logo.jpg";
+import unstopImg from "@/assets/unstop-logo.jpg";
+import topmateImg from "@/assets/topmate-logo.png";
 
 interface Experience {
   role: string;
