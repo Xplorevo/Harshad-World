@@ -4,10 +4,10 @@ import TiltCard from "@/components/shared/TiltCard";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import xtnLogo from "@/assets/xtn-logo.png";
 import ecellLogo from "@/assets/ecell-logo.png";
-import changemakerAsset from "@/assets/changemaker-logo.asset.json";
-import ecellIitbAsset from "@/assets/ecell-iitb-logo.asset.json";
-import unstopAsset from "@/assets/unstop-logo.asset.json";
-import topmateAsset from "@/assets/topmate-logo.asset.json";
+import changemakerImg from "@/assets/changemaker-logo";
+import ecellIitbImg from "@/assets/ecell-iitb-logo";
+import unstopImg from "@/assets/unstop-logo";
+import topmateImg from "@/assets/topmate-logo";
 
 interface Experience {
   role: string;
@@ -24,7 +24,7 @@ const experiences: Experience[] = [
     company: "Changemaker Academy",
     meta: "Part-time · India · Remote",
     period: "Sep 2026 — Present",
-    logo: changemakerAsset.url,
+    logo: changemakerImg,
     points: [
       "Recognized among Changemaker Academy's Top Mentors",
       "Guiding students and young founders on startup validation",
@@ -37,7 +37,7 @@ const experiences: Experience[] = [
     company: "E-Cell, IIT Bombay",
     meta: "Full-time · Pune District, Maharashtra, India · Remote",
     period: "Aug 2026 — Present",
-    logo: ecellIitbAsset.url,
+    logo: ecellIitbImg,
     points: [
       "Building strong teams and student leadership",
       "Increasing student engagement across campuses",
@@ -52,7 +52,7 @@ const experiences: Experience[] = [
     company: "Unstop",
     meta: "Part-time · India · Remote",
     period: "Jun 2026 — Present",
-    logo: unstopAsset.url,
+    logo: unstopImg,
     points: [
       "Mentored students in hackathons and AI tools",
       "Guidance on resume building, career planning and branding",
@@ -117,7 +117,7 @@ const experiences: Experience[] = [
   {
     role: "Startup Mentor",
     company: "Topmate",
-    logo: topmateAsset.url,
+    logo: topmateImg,
     points: ["Career mentoring", "Startup guidance", "Product strategy", "AI consulting"],
   },
 ];
