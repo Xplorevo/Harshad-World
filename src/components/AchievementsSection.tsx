@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import {
   Award,
   Brain,
