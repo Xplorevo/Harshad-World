@@ -53,7 +53,13 @@ const achievements = [
   { icon: Gavel, title: "Startup Judge Invitations Organizer", desc: "Curated industry judges for campus competitions." },
 ];
 
-const AchievementsSection = () => (
+const AchievementsSection = () => {
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true, align: "start", containScroll: "trimSnaps" },
+    [AutoScroll({ speed: 0.6, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
+
+  return (
   <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
     <div className="absolute inset-0 aurora" aria-hidden="true" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
