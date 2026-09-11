@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import {
   Award,
   Brain,
@@ -51,7 +53,13 @@ const achievements = [
   { icon: Gavel, title: "Startup Judge Invitations Organizer", desc: "Curated industry judges for campus competitions." },
 ];
 
-const AchievementsSection = () => (
+const AchievementsSection = () => {
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true, align: "start", containScroll: "trimSnaps" },
+    [AutoScroll({ speed: 0.6, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
+
+  return (
   <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
     <div className="absolute inset-0 aurora" aria-hidden="true" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -79,26 +87,27 @@ const AchievementsSection = () => (
         ))}
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
-        {achievements.map((item, i) => (
-          <motion.article
-            key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}
-            className="glass gradient-border rounded-2xl p-6 card-hover group"
-          >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-electric/25 to-violet/25 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <item.icon size={20} className="text-cyan" />
-            </div>
-            <h3 className="text-base font-heading font-bold text-primary-foreground mb-2">{item.title}</h3>
-            <p className="text-sm text-primary-foreground/80 leading-relaxed">{item.desc}</p>
-          </motion.article>
-        ))}
+      <div className="max-w-6xl mx-auto overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+        <div className="flex touch-pan-y">
+          {achievements.map((item) => (
+            <article
+              key={item.title}
+              className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[48%] lg:basis-[32%] pl-5 first:pl-0"
+            >
+              <div className="glass gradient-border rounded-2xl p-6 card-hover group h-full">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-electric/25 to-violet/25 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon size={20} className="text-cyan" />
+                </div>
+                <h3 className="text-base font-heading font-bold text-primary-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-primary-foreground/80 leading-relaxed">{item.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default AchievementsSection;

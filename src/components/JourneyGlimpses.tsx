@@ -9,24 +9,24 @@ import xplorevoTripImg from "@/assets/xplorevo-trip.jpg";
 import thubImg from "@/assets/thub-hyderabad.jpg";
 import xplorevoPosterImg from "@/assets/xplorevo-poster.jpg";
 import necCertImg from "@/assets/nec-certificate.jpg";
-import illuminateAsset from "@/assets/illuminate-event.jpg.asset.json";
-import hostAsset from "@/assets/host-event.jpg.asset.json";
-import igniteAsset from "@/assets/ignitepitch-winner.jpg.asset.json";
-import bhauAsset from "@/assets/bhau-coep.jpg.asset.json";
-import mumbaiHacksAsset from "@/assets/mumbai-hacks.jpg.asset.json";
-import thubVisitAsset from "@/assets/thub-visit.jpg.asset.json";
-import firstTeamAsset from "@/assets/ecell-first-team.jpg.asset.json";
-import mouAsset from "@/assets/xplorevo-ecell-mou.jpg.asset.json";
+import illuminateImg from "@/assets/illuminate-event.jpg";
+import hostImg from "@/assets/host-event.jpg";
+import igniteImg from "@/assets/ignitepitch-winner.jpg";
+import bhauImg from "@/assets/bhau-coep.jpg";
+import mumbaiHacksImg from "@/assets/mumbai-hacks.jpg";
+import thubVisitImg from "@/assets/thub-visit.jpg";
+import firstTeamImg from "@/assets/ecell-first-team.jpg";
+import mouImg from "@/assets/xplorevo-ecell-mou.jpg";
 
 const images = [
-  { src: illuminateAsset.url, title: "Organiser — Illuminate", category: "E-Cell MESWCOE" },
-  { src: hostAsset.url, title: "Host — Entrepreneurship Panel", category: "E-Cell Events" },
-  { src: igniteAsset.url, title: "Winner — Ignite Pitch", category: "Achievements" },
-  { src: bhauAsset.url, title: "Bhau Institute, COEP Pune", category: "Ecosystem Visits" },
-  { src: mumbaiHacksAsset.url, title: "Mumbai Hacks — Agentic AI", category: "India's Largest Hackathon" },
-  { src: thubVisitAsset.url, title: "T-Hub Glimpse", category: "T-Hub Journey" },
-  { src: firstTeamAsset.url, title: "Origin of E-Cell — First Team", category: "E-Cell Journey" },
-  { src: mouAsset.url, title: "MoU — Xplorevo × E-Cell", category: "Sponsorship & Partnership" },
+  { src: illuminateImg, title: "Organiser — Illuminate", category: "E-Cell MESWCOE" },
+  { src: hostImg, title: "Host — Entrepreneurship Panel", category: "E-Cell Events" },
+  { src: igniteImg, title: "Winner — Ignite Pitch", category: "Achievements" },
+  { src: bhauImg, title: "Bhau Institute, COEP Pune", category: "Ecosystem Visits" },
+  { src: mumbaiHacksImg, title: "Mumbai Hacks — Agentic AI", category: "India's Largest Hackathon" },
+  { src: thubVisitImg, title: "T-Hub Glimpse", category: "T-Hub Journey" },
+  { src: firstTeamImg, title: "Origin of E-Cell — First Team", category: "E-Cell Journey" },
+  { src: mouImg, title: "MoU — Xplorevo × E-Cell", category: "Sponsorship & Partnership" },
   { src: thubImg, title: "T-Hub Hyderabad", category: "T-Hub Journey" },
   { src: iitbImg, title: "IIT Bombay Visit", category: "E-Cell Events" },
   { src: necImg, title: "NEC Finals — IIT Bombay", category: "E-Cell Events" },
