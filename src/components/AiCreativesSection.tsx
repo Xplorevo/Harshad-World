@@ -5,6 +5,11 @@ import { ChevronLeft, ChevronRight, X, Sparkles, Play } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const creatives = [
+  { src: "/creatives/creative-8.mp4", poster: "/creatives/creative-8.jpg", title: "AI Creative 08", category: "AI Generated" },
+  { src: "/creatives/creative-9.mp4", poster: "/creatives/creative-9.jpg", title: "AI Creative 09", category: "AI Generated" },
+  { src: "/creatives/creative-10.mp4", poster: "/creatives/creative-10.jpg", title: "AI Creative 10", category: "AI Generated" },
+  { src: "/creatives/creative-11.mp4", poster: "/creatives/creative-11.jpg", title: "AI Creative 11", category: "AI Generated" },
+  { src: "/creatives/creative-12.mp4", poster: "/creatives/creative-12.jpg", title: "AI Creative 12", category: "AI Generated" },
   { src: "/creatives/creative-1.mp4", poster: "/creatives/creative-1.jpg", title: "AI Creative 01", category: "AI Generated" },
   { src: "/creatives/creative-2.mp4", poster: "/creatives/creative-2.jpg", title: "AI Creative 02", category: "AI Generated" },
   { src: "/creatives/creative-3.mp4", poster: "/creatives/creative-3.jpg", title: "AI Creative 03", category: "AI Generated" },

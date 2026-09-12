@@ -30,6 +30,8 @@ const rotating = [
   "Innovation Leader",
 ];
 
+const professionalTitles = ["Founder", "Entrepreneur", "AI Builder", "Full Stack Developer"];
+
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
   { icon: Instagram, label: "Instagram", href: links.instagram },
@@ -105,14 +107,26 @@ const HeroSection = () => {
               <span className="text-gradient-brand">Pakhale</span>
             </motion.h1>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-base md:text-lg text-muted-foreground font-medium"
+              className="flex flex-wrap items-center gap-x-2 gap-y-1 text-base md:text-lg text-muted-foreground font-medium"
+              aria-label="Founder, Entrepreneur, AI Builder, Full Stack Developer"
             >
-              Founder • Entrepreneur • AI Builder • Full Stack Developer
-            </motion.p>
+              {professionalTitles.map((title, index) => (
+                <span key={title} className="inline-flex items-center gap-2">
+                  <motion.span
+                    animate={{ y: [0, -4, 0], color: ["hsl(var(--muted-foreground))", "hsl(var(--primary))", "hsl(var(--muted-foreground))"] }}
+                    transition={{ duration: 2.4, delay: index * 0.35, repeat: Infinity, ease: "easeInOut" }}
+                    className="inline-block"
+                  >
+                    {title}
+                  </motion.span>
+                  {index < professionalTitles.length - 1 && <span aria-hidden="true">•</span>}
+                </span>
+              ))}
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 18 }}
