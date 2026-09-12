@@ -31,6 +31,8 @@ const stats = [
   { value: 100, suffix: "K+", label: "Social Media Reach" },
 ];
 
+const scrollingStats = [...stats, ...stats];
+
 const achievements = [
   { icon: Crown, title: "Founder & CEO — Xplorevo Pvt Ltd", desc: "Leading a TravelTech venture from idea to execution." },
   { icon: Network, title: "Founded Xplorevo Tech Network", desc: "A student technology community connecting builders across India." },
@@ -75,9 +77,10 @@ const AchievementsSection = () => {
 
       <div className="max-w-6xl mx-auto mb-16 overflow-hidden cursor-grab active:cursor-grabbing" ref={statsEmblaRef}>
         <div className="flex touch-pan-y">
-          {stats.map((s, i) => (
+          {scrollingStats.map((s, i) => (
             <motion.div
-              key={s.label}
+              key={`${s.label}-${i}`}
+              aria-hidden={i >= stats.length}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
