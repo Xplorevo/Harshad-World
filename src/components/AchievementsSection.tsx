@@ -78,13 +78,9 @@ const AchievementsSection = () => {
       <div className="max-w-6xl mx-auto mb-16 overflow-hidden cursor-grab active:cursor-grabbing" ref={statsEmblaRef}>
         <div className="flex touch-pan-y">
           {scrollingStats.map((s, i) => (
-            <motion.div
+            <div
               key={`${s.label}-${i}`}
               aria-hidden={i >= stats.length}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.45, delay: i * 0.05 }}
               className="min-w-0 shrink-0 grow-0 basis-[48%] sm:basis-[31%] lg:basis-[19%] pl-4 first:pl-0"
             >
               <div className="glass rounded-2xl p-5 text-center h-full min-h-28 flex flex-col items-center justify-center">
@@ -93,7 +89,7 @@ const AchievementsSection = () => {
                 </p>
                 <p className="text-[11px] mt-1 text-primary-foreground/80 leading-tight">{s.label}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
