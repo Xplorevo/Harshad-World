@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Journey", href: "#who-am-i" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "AI Creatives", href: "#ai-creatives" },
   { label: "Achievements", href: "#achievements" },
   { label: "Skills", href: "#skills" },
   { label: "Magazines", href: "#magazines" },

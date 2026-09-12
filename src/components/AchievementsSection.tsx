@@ -31,6 +31,8 @@ const stats = [
   { value: 100, suffix: "K+", label: "Social Media Reach" },
 ];
 
+const scrollingStats = [...stats, ...stats];
+
 const achievements = [
   { icon: Crown, title: "Founder & CEO — Xplorevo Pvt Ltd", desc: "Leading a TravelTech venture from idea to execution." },
   { icon: Network, title: "Founded Xplorevo Tech Network", desc: "A student technology community connecting builders across India." },
@@ -54,7 +56,11 @@ const achievements = [
 ];
 
 const AchievementsSection = () => {
-  const [emblaRef] = useEmblaCarousel(
+  const [statsEmblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true, align: "start", containScroll: "trimSnaps" },
+    [AutoScroll({ speed: 0.45, direction: "backward", stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
+  const [achievementsEmblaRef] = useEmblaCarousel(
     { loop: true, dragFree: true, align: "start", containScroll: "trimSnaps" },
     [AutoScroll({ speed: 0.6, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
@@ -69,25 +75,26 @@ const AchievementsSection = () => {
         title={<>Milestones, recognition &amp; <span className="text-gradient-brand">real outcomes</span></>}
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-6xl mx-auto mb-16">
-        {stats.map((s, i) => (
-          <motion.div
-            key={s.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.45, delay: i * 0.05 }}
-            className="glass rounded-2xl p-5 text-center"
-          >
-            <p className="text-2xl md:text-3xl font-heading font-bold text-gradient-brand">
-              <AnimatedCounter value={s.value} suffix={s.suffix} />
-            </p>
-            <p className="text-[11px] mt-1 text-primary-foreground/80 leading-tight">{s.label}</p>
-          </motion.div>
-        ))}
+      <div className="max-w-6xl mx-auto mb-16 overflow-hidden cursor-grab active:cursor-grabbing" ref={statsEmblaRef}>
+        <div className="flex touch-pan-y">
+          {scrollingStats.map((s, i) => (
+            <div
+              key={`${s.label}-${i}`}
+              aria-hidden={i >= stats.length}
+              className="min-w-0 shrink-0 grow-0 basis-[48%] sm:basis-[31%] lg:basis-[19%] pl-4 first:pl-0"
+            >
+              <div className="glass rounded-2xl p-5 text-center h-full min-h-28 flex flex-col items-center justify-center">
+                <p className="text-2xl md:text-3xl font-heading font-bold text-gradient-brand">
+                  <AnimatedCounter value={s.value} suffix={s.suffix} />
+                </p>
+                <p className="text-[11px] mt-1 text-primary-foreground/80 leading-tight">{s.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="max-w-6xl mx-auto overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      <div className="max-w-6xl mx-auto overflow-hidden cursor-grab active:cursor-grabbing" ref={achievementsEmblaRef}>
         <div className="flex touch-pan-y">
           {achievements.map((item) => (
             <article

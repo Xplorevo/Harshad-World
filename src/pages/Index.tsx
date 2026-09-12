@@ -13,6 +13,7 @@ import AboutSection from "@/components/AboutSection";
 import WhoAmISection from "@/components/WhoAmISection";
 import ExperienceSection from "@/components/ExperienceSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import AiCreativesSection from "@/components/AiCreativesSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import SkillsSection from "@/components/SkillsSection";
 import JourneyGlimpses from "@/components/JourneyGlimpses";
@@ -60,6 +61,7 @@ const Index = () => {
           <WhoAmISection />
           <ExperienceSection />
           <FeaturedProjects />
+          <AiCreativesSection />
           <AchievementsSection />
           <SkillsSection />
           <JourneyGlimpses />
