@@ -108,6 +108,8 @@ const BlogPost = () => {
             </div>
           </aside>
         )}
+
+        <AuthorConnect />
       </main>
     </div>
   );
