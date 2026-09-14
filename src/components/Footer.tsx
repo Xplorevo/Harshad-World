@@ -17,6 +17,7 @@ const quickLinks = [
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
+  { icon: Github, label: "GitHub", href: links.github },
   { icon: Instagram, label: "Instagram", href: links.instagram },
   { icon: Mail, label: "Email", href: mailto },
   { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
