@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Instagram, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import ecellLogo from "@/assets/ecell-logo.png";
 import xtnLogo from "@/assets/xtn-logo.png";
