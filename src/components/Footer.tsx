@@ -50,6 +50,12 @@ const Footer = () => {
                 <img src={xplorevoLogo} alt="Xplorevo" loading="lazy" className="h-9 rounded-lg object-contain" />
               </a>
             </div>
+            <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-white/60">
+              <span>Profiles:</span>
+              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">LinkedIn</a>
+              <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">GitHub</a>
+              <a href={links.ecell} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">E-Cell Mentor</a>
+            </div>
           </div>
 
           <nav aria-label="Footer">
