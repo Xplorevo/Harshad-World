@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Clock, Github, Linkedin } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Seo from "@/components/Seo";
 import { SITE_URL, absoluteOgImage, routeSeo } from "@/config/seo";
 import { posts } from "@/config/posts";
+import { links } from "@/config/links";
+import AuthorConnect from "@/components/AuthorConnect";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
@@ -103,6 +105,8 @@ const Blog = () => (
           </motion.article>
         ))}
       </div>
+
+      <AuthorConnect />
     </main>
   </div>
 );

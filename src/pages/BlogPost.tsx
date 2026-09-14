@@ -5,6 +5,7 @@ import Seo from "@/components/Seo";
 import { SITE_URL, absoluteOgImage } from "@/config/seo";
 import { postBySlug, posts } from "@/config/posts";
 import NotFound from "./NotFound";
+import AuthorConnect from "@/components/AuthorConnect";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
@@ -107,6 +108,8 @@ const BlogPost = () => {
             </div>
           </aside>
         )}
+
+        <AuthorConnect />
       </main>
     </div>
   );

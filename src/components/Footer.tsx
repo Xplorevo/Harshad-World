@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Instagram, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
 import xplorevoLogo from "@/assets/xplorevo-logo.jpg";
 import ecellLogo from "@/assets/ecell-logo.png";
 import xtnLogo from "@/assets/xtn-logo.png";
@@ -17,6 +17,7 @@ const quickLinks = [
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: links.linkedin },
+  { icon: Github, label: "GitHub", href: links.github },
   { icon: Instagram, label: "Instagram", href: links.instagram },
   { icon: Mail, label: "Email", href: mailto },
   { icon: MessageCircle, label: "WhatsApp", href: links.whatsapp },
@@ -48,6 +49,12 @@ const Footer = () => {
               <a href={links.xplorevo} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
                 <img src={xplorevoLogo} alt="Xplorevo" loading="lazy" className="h-9 rounded-lg object-contain" />
               </a>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-white/60">
+              <span>Profiles:</span>
+              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">LinkedIn</a>
+              <a href={links.github} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">GitHub</a>
+              <a href={links.ecell} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">E-Cell Mentor</a>
             </div>
           </div>
 

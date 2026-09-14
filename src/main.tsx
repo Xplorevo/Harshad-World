@@ -3,8 +3,8 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
-// Apply the saved theme before first paint (premium dark by default).
-if (localStorage.getItem("hp-dark") !== "false") {
+// Apply the saved theme before first paint (light/white by default).
+if (localStorage.getItem("hp-dark") === "true") {
   document.documentElement.classList.add("dark");
 }
 
