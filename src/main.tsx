@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 // Apply the saved theme before first paint (light/white by default).
-if (localStorage.getgetItem("hp-dark") === "true") {
+if (localStorage.getItem("hp-dark") === "true") {
   document.documentElement.classList.add("dark");
 }
 
