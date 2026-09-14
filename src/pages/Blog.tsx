@@ -105,6 +105,8 @@ const Blog = () => (
           </motion.article>
         ))}
       </div>
+
+      <AuthorConnect />
     </main>
   </div>
 );
