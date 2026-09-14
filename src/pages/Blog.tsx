@@ -6,6 +6,7 @@ import Seo from "@/components/Seo";
 import { SITE_URL, absoluteOgImage, routeSeo } from "@/config/seo";
 import { posts } from "@/config/posts";
 import { links } from "@/config/links";
+import AuthorConnect from "@/components/AuthorConnect";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
