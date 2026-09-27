@@ -68,7 +68,13 @@ const AchievementsSection = () => {
   return (
   <section id="achievements" className="relative py-24 gradient-navy overflow-hidden noise on-dark">
     <div className="absolute inset-0 aurora" aria-hidden="true" />
-    <div className="container mx-auto px-4 lg:px-8 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="container mx-auto px-4 lg:px-8 relative z-10"
+    >
       <SectionHeading
         invert
         eyebrow="Achievements"
@@ -112,7 +118,7 @@ const AchievementsSection = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   </section>
   );
 };

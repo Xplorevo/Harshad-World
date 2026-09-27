@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, Sparkles, Play } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import VoiceoverButton from "@/components/shared/VoiceoverButton";
 
 const creatives = [
   { src: "/creatives/creative-8.mp4", poster: "/creatives/creative-8.jpg", title: "AI Creative 08", category: "AI Generated" },
@@ -21,7 +22,6 @@ const creatives = [
 
 const AiCreativesSection = () => {
   const [lightbox, setLightbox] = useState<number | null>(null);
-  const { ref, isVisible } = useScrollReveal();
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -68,9 +68,12 @@ const AiCreativesSection = () => {
 
   return (
     <section id="ai-creatives" className="py-24 bg-background overflow-hidden">
-      <div
-        ref={ref}
-        className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.12 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="container mx-auto px-4 lg:px-8"
       >
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
@@ -81,6 +84,11 @@ const AiCreativesSection = () => {
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
             AI-generated films and ad creatives. They play as they slide — drag to explore more, tap for sound.
           </p>
+          <VoiceoverButton
+            src="/audio/ai-creatives-voiceover.wav"
+            label="Hear creative overview"
+            className="mt-6"
+          />
         </div>
 
         <div className="relative max-w-6xl mx-auto">
@@ -125,7 +133,7 @@ const AiCreativesSection = () => {
             <ChevronRight size={18} />
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {lightbox !== null && (
         <div className="fixed inset-0 z-[100] bg-foreground/90 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in" onClick={close}>

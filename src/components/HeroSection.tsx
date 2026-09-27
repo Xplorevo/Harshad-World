@@ -14,6 +14,7 @@ import profileImg from "@/assets/profile2.jpg";
 import profileImg2 from "@/assets/profile-iitb.jpg";
 import ParticleField from "@/components/shared/ParticleField";
 import Typewriter from "@/components/shared/Typewriter";
+import VoiceoverButton from "@/components/shared/VoiceoverButton";
 import { links, mailto } from "@/config/links";
 import { trackCta, trackOutboundConversion } from "@/lib/analytics";
 
@@ -168,6 +169,7 @@ const HeroSection = () => {
               >
                 <Palette size={16} /> View Design Portfolio <ExternalLink size={13} />
               </a>
+              <VoiceoverButton src="/audio/hero-voiceover.wav" label="Hear my introduction" />
             </motion.div>
 
             <motion.div

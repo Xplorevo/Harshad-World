@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Check,
   Copy,
@@ -42,7 +43,13 @@ const ContactSection = () => {
           subtitle="Startup idea, collaboration, mentorship, or a partnership — I'm always open."
         />
 
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.18 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6"
+        >
           <div className="glass-strong rounded-3xl p-8">
             <div className="grid sm:grid-cols-2 gap-3">
               {channels.map((c) => (
@@ -109,7 +116,7 @@ const ContactSection = () => {
               className="w-full h-[22rem] rounded-2xl border-0"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
