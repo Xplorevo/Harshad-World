@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import SectionHeading from "@/components/shared/SectionHeading";
 
 export const faqs = [
@@ -28,11 +29,18 @@ const FaqSection = () => (
         subtitle="Quick answers about my work, products and how to collaborate."
       />
       <div className="max-w-3xl mx-auto space-y-4">
-        {faqs.map((f) => (
-          <article key={f.q} className="glass rounded-2xl p-6">
+        {faqs.map((f, index) => (
+          <motion.article
+            key={f.q}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            className="glass rounded-2xl p-6"
+          >
             <h3 className="text-base font-heading font-bold text-foreground">{f.q}</h3>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{f.a}</p>
-          </article>
+          </motion.article>
         ))}
       </div>
     </div>
